@@ -1,0 +1,31 @@
+<p>favorites works!</p>
+
+
+<div class="fav-div">
+
+    @for (item of serv.favitem; track $index) {
+
+
+
+    <div class="box">
+
+        <div class="yoq" (click)="serv.addfav(item.id, item)">
+            <i class="bi bi-heart"></i>
+        </div>
+
+        <div class="img">
+            <img [src]="item.image" alt="">
+        </div>
+
+        <div class="bottom">
+            <p>{{item.title}}</p>
+            <p>{{item.price |currency: 'USD'}}</p>
+        </div>
+
+        <button type="button" class="btn btn-outline-success">Sotib olish</button>
+
+    </div>
+
+
+    }
+</div>

@@ -8,27 +8,28 @@
 
       <div class="kat">
         <i class="bi bi-collection"></i>
-         <h5>Katalog</h5>
-       </div>
+        <h5>Katalog</h5>
+      </div>
 
-        <div class="serch">
-          <input type="text" placeholder="mahsulotlarni qidirish..." class="inp">
-          <i class="bi bi-search glas"></i>
-        </div>
-     
-      
+      <div class="serch">
+        <input type="text" placeholder="mahsulotlarni qidirish..." class="inp">
+        <i class="bi bi-search glas"></i>
+      </div>
+
+
     </div>
 
     <div class="user">
 
-      <div class="user-item person">
+      <div class="user-item person" routerLink="/savat">
         <i class="bi bi-person"></i>
         <h5>Kirish</h5>
       </div>
 
-      <div class="user-item"  (click)="showfav()">
+      <div class="user-item" routerLink="/favorites">
         <i class="bi bi-heart"></i>
         <h5>Saralangan</h5>
+        <!-- <p>{{serv.favitem.length}}</p> -->
       </div>
 
       <div class="user-item">
@@ -39,47 +40,16 @@
   </nav>
 </header>
 
-<div class="favorit" [ngClass]="fav ? 'yesfav' : 'nofav'">
-  <button (click)="showfav()">X</button>
-</div>
+<app-product></app-product>
 
 
 
 
-<div class="carousel-item">
-  <img src="/assets/milyi-kot-v-studii.jpg" alt="...">
-  <div class="carousel-caption d-none d-md-block">
-    <h5>cat</h5>
-    <p>for free</p>
-  </div>
-</div>
+<!-- <div class="fav-div" [ngClass]="serv.fav ? 'yesfav' : 'nofav'">
+  <button (click)="serv.showfav()" class="showdiv">X</button>
 
 
 
+</div> -->
 
-
-
-
-<main class="container">
-    @for (item of product(); track $index) {
-
-      <div class="box">
-
-        <div class="yoq">
-         <i class="bi bi-heart"></i>
-        </div>
-
-        <div class="img">
-          <img [src]="item.image" alt="">
-        </div>
-
-        <div class="bottom">
-          <p>{{item.title}}</p>
-          <p>{{item.price |currency: 'USD'}}</p>
-        </div>
-
-      <button type="button" class="btn btn-outline-success">Sotib olish</button>
-
-      </div>
-    }
-</main>
+<router-outlet></router-outlet>

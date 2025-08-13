@@ -1,25 +1,34 @@
-.nav-main{
+header {
+    margin: 0 auto;
+}
+
+.nav-main {
     display: flex;
     justify-content: space-around;
+    align-items: center;
+    color: #0096FF;
+    /* background-color: #D3D3D3; */
+    margin: 0 auto;
 }
 
-.logo{
+.logo {
     display: flex;
-    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #0096FF;
 }
 
-.searching{
+.searching {
     display: flex;
     gap: 1rem;
 }
 
-.kat{
+.kat {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.serch{
+.serch {
     display: flex;
     align-items: center;
     /* position:absolute; */
@@ -28,7 +37,7 @@
 
 
 
-.user{
+.user {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -36,30 +45,36 @@
     gap: 2rem;
 }
 
+.user-item:hover {
+    background-color: #D3D3D3;
+}
+
 .user-item {
-  display: flex;
-  align-items: center; 
-  gap: 6px; 
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 1rem;
+    border-radius: 5px;
 }
 
 .user-item i {
-  font-size: 1.2rem;
-  line-height: 1; 
+    font-size: 1.2rem;
+    line-height: 1;
 }
 
 .user-item h5 {
-  margin: 0; 
-  font-size: 1rem; 
+    margin: 0;
+    font-size: 1rem;
 }
 
 
-.glas{
+.glas {
     position: relative;
     left: -10%;
     padding-right: 3px;
 }
 
-.inp{
+.inp {
     padding-right: 1.5rem;
 }
 
@@ -67,96 +82,13 @@
 /*############################ */
 
 
-.container{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 1.3rem;
-}
 
-
-.box{
-  width: 200px;
-  height: 300px;
-  /* background-color: lightblue; */
-  border-radius: 1rem;
- box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
- 
-}
-
-.bottom p:first-child {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.img{
-    background-color: #e9edc9;
-    height: 150px;
-    border-radius: 1rem 1rem 0  0;
-    overflow: hidden;
-    margin-top: 0;
-}
-
-
-
-.box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;  
-  display: inline-block;
-  transition: transform 0.3s ease;
-}
-
-img:hover{
-    transform: scale(1.05);
-    transition: all 0.5s ease;
-}
-
-.bottom{
-    display: flex;
-    justify-content: space-between;
-    padding: 5px;
-}
-
-.yoq{
-    width: 30px;
-    height: 30px;
-    background-color: #ccd5ae;
-    border-radius: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.showdiv {
     position: relative;
-    top: 15%;
-    left: 80%;
-    z-index: 10;
-
-}
-
-.bottom p {
-    font-size: 13px;
-}
-
-button{
-     background-color: green;
-}
-
-
-.favorit{
-    width: 300px;
-    height: 400px;
+    left: 10%;
+    bottom: 100%;
+    z-index: 9999;
     background-color: lightblue;
-    z-index: 999;
-    position: fixed;
-    top: 15%;
-    left: 70%;
-}
+    border: none;
 
-.yesfav{
-    display: block;
-}
-
-.nofav{
-    display: none;
 }
