@@ -5,6 +5,10 @@
     margin-top: 1rem;
 }
 
+body {
+    padding-left: 30%;
+    padding-right: 30%;
+}
 
 .box {
     width: 200px;
@@ -77,19 +81,6 @@ button {
 
 
 
-
-.yesfav {
-    display: block;
-}
-
-.nofav {
-    display: none;
-}
-
-.favitem {
-    overflow: auto;
-
-}
 
 /* .favorit {
     width: 80%;

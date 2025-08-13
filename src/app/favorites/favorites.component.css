@@ -11,13 +11,15 @@
     /* background-color: lightblue; */
     border-radius: 1rem;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-
+    position: relative;
 }
 
 .fav-div {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 1rem;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
 .bottom p:first-child {
@@ -64,9 +66,9 @@ img:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    top: 15%;
-    left: 80%;
+    position: absolute;
+    top: 1%;
+    left: 82%;
     z-index: 10;
 
 }
@@ -87,4 +89,12 @@ button {
     position: fixed;
     top: 15%;
     left: 70%;
+}
+
+
+
+
+
+footer {
+    margin-bottom: 10%;
 }

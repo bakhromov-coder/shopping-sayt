@@ -1,5 +1,7 @@
-<p>favorites works!</p>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
+<h3>Istaklarim</h3>
+<hr>
 
 <div class="fav-div">
 
@@ -9,7 +11,7 @@
 
     <div class="box">
 
-        <div class="yoq" (click)="serv.addfav(item.id, item)">
+        <div class="yoq" (click)="serv.remfav(item.id)">
             <i class="bi bi-heart"></i>
         </div>
 
@@ -29,3 +31,7 @@
 
     }
 </div>
+
+<footer>
+    <h3>bu yerda sizning reklamangiz bo'lishi mumkin edi</h3>
+</footer>

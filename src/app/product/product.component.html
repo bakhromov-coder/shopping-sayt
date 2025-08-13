@@ -3,8 +3,8 @@
 
     <div class="box">
 
-        <div class="yoq" (click)="serv.addfav(item.id, item)">
-            <i class="bi bi-heart"></i>
+        <div class="yoq" (click)="serv.addfav(item.id, item) ">
+            <i class="bi" [class]="serv.heart ? 'bi-heart-fill' : 'bi-heart' " (click)="serv.heartt()"></i>
         </div>
 
         <div class="img">

@@ -1,7 +1,7 @@
 <header>
   <nav class="nav-main">
     <div class="logo">
-      <h3>Sofuto market</h3>
+      <h3 routerLink="/product">Sofuto market</h3>
     </div>
 
     <div class="searching">
@@ -21,7 +21,7 @@
 
     <div class="user">
 
-      <div class="user-item person" routerLink="/savat">
+      <div class="user-item person">
         <i class="bi bi-person"></i>
         <h5>Kirish</h5>
       </div>
@@ -32,24 +32,12 @@
         <!-- <p>{{serv.favitem.length}}</p> -->
       </div>
 
-      <div class="user-item">
+      <div class="user-item" routerLink="/basket">
         <i class="bi bi-bag-check"></i>
         <h5>Savat</h5>
       </div>
     </div>
   </nav>
 </header>
-
-<app-product></app-product>
-
-
-
-
-<!-- <div class="fav-div" [ngClass]="serv.fav ? 'yesfav' : 'nofav'">
-  <button (click)="serv.showfav()" class="showdiv">X</button>
-
-
-
-</div> -->
 
 <router-outlet></router-outlet>

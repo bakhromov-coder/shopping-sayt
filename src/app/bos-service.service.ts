@@ -25,6 +25,12 @@ export class BosServiceService {
 
   fav: boolean = false;
 
+  heart: boolean = false;
+
+  heartt() {
+    this.heart = !this.heart
+  }
+
 
   getdata() {
     this.http.get<Products[]>('https://fakestoreapi.com/products').subscribe(data => {
@@ -49,6 +55,21 @@ export class BosServiceService {
         item
       )
       console.log(this.favitem)
+    }
+  }
+
+  remfav(id: number) {
+    if (this.favitem.some(el => el.id === id)) {
+      this.favitem.forEach((el, index) => {
+        if (el.id === id) {
+          if (el.count && el.count > 1) {
+            el.count -= 1;
+          } else {
+            this.favitem.splice(index, 1);
+          }
+        }
+      });
+      console.log(this.favitem);
     }
   }
 
