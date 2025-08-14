@@ -1,4 +1,4 @@
-import { Component, inject, Pipe, signal } from '@angular/core';
+import { Component, inject, NgModule, Pipe, signal, } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { OnInit } from '@angular/core';
@@ -7,13 +7,14 @@ import { pipe } from 'rxjs';
 import { BosServiceService } from './bos-service.service';
 import { ProductItemComponent } from './product-item/product-item.component';
 import { ProductComponent } from './product/product.component';
+import { FormsModule, NgModel, NgModelGroup } from '@angular/forms';
 
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, HttpClientModule, CurrencyPipe, NgClass, ProductItemComponent, ProductComponent],
+  imports: [RouterOutlet, RouterLink, HttpClientModule, FormsModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 

@@ -12,7 +12,8 @@
       </div>
 
       <div class="serch">
-        <input type="text" placeholder="mahsulotlarni qidirish..." class="inp">
+        <input type="text" placeholder="mahsulotlarni qidirish..." class="inp" [(ngModel)]="serv.input">
+        <i class="bi bi-x-circle clear" (click)="serv.cleard()"></i>
         <button class="glas"><i class="bi bi-search"></i></button>
 
       </div>

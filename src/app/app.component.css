@@ -30,7 +30,14 @@
     display: flex;
     align-items: center;
     /* position:absolute; */
+    position: relative;
 
+}
+
+.clear {
+    z-index: 999;
+    right: 25%;
+    position: absolute;
 }
 
 
@@ -69,11 +76,12 @@
 
 .glas {
     position: relative;
-    left: -10%;
+    left: -11.5%;
     padding-right: 20px;
-    border-color: #0096FF;
+    /* border-color: #0096FF; */
+    border: none;
     border-left: none;
-    font-size: 15px;
+    font-size: 20px;
     border-radius: 5px;
     border-radius: 0 5px 5px 0;
 
@@ -88,9 +96,10 @@
 
 
 .inp {
-    padding-right: 4rem;
-    border: 2px solid #0096FF;
-    font-size: 15px;
+    padding-right: 5rem;
+    /* border: 2px solid #0096FF; */
+    border: 1px solid #808080;
+    font-size: 20px;
     width: 350px;
     border-radius: 5px;
 }

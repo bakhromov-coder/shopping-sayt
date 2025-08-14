@@ -9,7 +9,8 @@ interface Products {
   price: number,
   category: string,
   image: string,
-  count?: number;
+  count?: number,
+  heart: boolean
 }
 
 @Injectable({
@@ -23,11 +24,16 @@ export class BosServiceService {
 
   product = signal<Products[]>([]);
 
-  fav: boolean = false;
+  // fav: boolean = false;
+
+  isFav: boolean = false
 
   heart: boolean = false;
 
-  heartt() {
+
+  input = ''
+
+  heartt(item: Products) {
     this.heart = !this.heart
   }
 
@@ -76,9 +82,15 @@ export class BosServiceService {
 
 
 
-  showfav() {
-    this.fav = !this.fav
+  // showfav(item: Products) {
+  //   this.fav = !this.fav
+  // }
+
+  cleard() {
+    this.input = ''
   }
+
+
 
 
   constructor() { }

@@ -19,10 +19,18 @@ body {
     position: relative;
 }
 
-.bottom p:first-child {
-    white-space: nowrap;
+
+.bottom p:last-child {
+    /* white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
+    text-overflow: ellipsis; */
+    min-height: 10px;
+    font-size: 13px;
+}
+
+p {
+    min-height: 10px;
+    overflow: auto;
 }
 
 .img {
@@ -51,8 +59,7 @@ img:hover {
 }
 
 .bottom {
-    display: flex;
-    justify-content: space-between;
+
     padding: 5px;
 }
 
@@ -71,12 +78,20 @@ img:hover {
 
 }
 
-.bottom p {
-    font-size: 13px;
-}
+
 
 button {
-    background-color: green;
+    width: 200px;
+    background-color: #8A8AFF;
+    color: white;
+    position: absolute;
+    right: 0%;
+    bottom: 0%;
+    border-radius: 10px 10px 1rem 1rem;
+}
+
+button:hover {
+    background-color: #B8B8FF;
 }
 
 
