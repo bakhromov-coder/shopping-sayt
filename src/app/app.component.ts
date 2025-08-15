@@ -5,7 +5,7 @@ import { OnInit } from '@angular/core';
 import { CurrencyPipe, NgClass, NgFor, NgStyle } from '@angular/common';
 import { pipe } from 'rxjs';
 import { BosServiceService } from './bos-service.service';
-import { ProductItemComponent } from './product-item/product-item.component';
+
 import { ProductComponent } from './product/product.component';
 import { FormsModule, NgModel, NgModelGroup } from '@angular/forms';
 

@@ -1,45 +1,48 @@
-<header>
-  <nav class="nav-main">
-    <div class="logo">
-      <h3 routerLink="/product">Sofuto market</h3>
-    </div>
-
-    <div class="searching">
-
-      <div class="kat">
-        <i class="bi bi-collection"></i>
-        <h5>Katalog</h5>
+<div class="container">
+  <header>
+    <nav class="nav-main">
+      <div class="logo">
+        <img src="/assets/ChatGPT Image Aug 15, 2025, 09_53_29 AM.png" alt="">
+        <h3 routerLink="/product">Sofuto market</h3>
       </div>
 
-      <div class="serch">
-        <input type="text" placeholder="mahsulotlarni qidirish..." class="inp" [(ngModel)]="serv.input">
-        <i class="bi bi-x-circle clear" (click)="serv.cleard()"></i>
-        <button class="glas"><i class="bi bi-search"></i></button>
+      <div class="searching">
+
+        <div class="kat">
+          <i class="bi bi-collection"></i>
+          <h5>Katalog</h5>
+        </div>
+
+        <div class="serch">
+          <input type="text" placeholder="mahsulotlarni qidirish..." class="inp" [(ngModel)]="serv.input">
+          <i class="bi bi-x-circle clear" (click)="serv.cleard()"></i>
+          <button class="glas"><i class="bi bi-search"></i></button>
+
+        </div>
+
 
       </div>
 
+      <div class="user">
 
-    </div>
+        <div class="user-item person">
+          <i class="bi bi-person"></i>
+          <h5>Kirish</h5>
+        </div>
 
-    <div class="user">
+        <div class="user-item" routerLink="/favorites">
+          <i class="bi bi-heart"></i>
+          <h5>Saralangan</h5>
+          <!-- <p>{{serv.favitem.length}}</p> -->
+        </div>
 
-      <div class="user-item person">
-        <i class="bi bi-person"></i>
-        <h5>Kirish</h5>
+        <div class="user-item" routerLink="/basket">
+          <i class="bi bi-bag-check"></i>
+          <h5>Savat</h5>
+        </div>
       </div>
+    </nav>
+  </header>
 
-      <div class="user-item" routerLink="/favorites">
-        <i class="bi bi-heart"></i>
-        <h5>Saralangan</h5>
-        <!-- <p>{{serv.favitem.length}}</p> -->
-      </div>
-
-      <div class="user-item" routerLink="/basket">
-        <i class="bi bi-bag-check"></i>
-        <h5>Savat</h5>
-      </div>
-    </div>
-  </nav>
-</header>
-
-<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
+</div>
