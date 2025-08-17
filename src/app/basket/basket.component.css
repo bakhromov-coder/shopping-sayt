@@ -58,6 +58,7 @@ img {
 
 .title {
     display: flex;
+    justify-content: end;
     gap: 2rem;
 }
 
