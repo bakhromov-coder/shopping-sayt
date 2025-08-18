@@ -37,9 +37,9 @@
                 <div class="price-main">
                     <div class="count">
                         <div class="count-num">
-                            <i class="bi bi-dash"></i>
+                            <i class="bi bi-dash" (click)="serv.minus(item.id)"></i>
                             <p class="pnum">{{item.count}}</p>
-                            <i class="bi bi-plus"></i>
+                            <i class="bi bi-plus" (click)="serv.plus(item.id)"></i>
                         </div>
 
                     </div>

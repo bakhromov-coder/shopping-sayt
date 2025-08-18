@@ -10,4 +10,10 @@ import { CurrencyPipe } from '@angular/common';
 })
 export class FavoritesComponent {
   constructor(public serv: BosServiceService) { }
+
+  get saralangan() {
+    return this.serv.product().filter(el => {
+      return el.heart
+    })
+  }
 }

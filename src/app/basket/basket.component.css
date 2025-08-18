@@ -30,6 +30,8 @@
 
 .box {
     display: flex;
+    align-items: center;
+    gap: 1rem;
     border: 1px solid #969696;
 }
 
@@ -37,7 +39,7 @@
     display: flex;
     flex-direction: column;
     justify-content: end;
-    margin-left: 1.5rem;
+    /* margin-left: 1.5rem; */
 }
 
 .img {
@@ -59,7 +61,12 @@ img {
 .title {
     display: flex;
     justify-content: end;
-    gap: 2rem;
+    /* gap: 2rem; */
+}
+
+.title>p {
+    width: 400px;
+    overflow: auto;
 }
 
 .del {

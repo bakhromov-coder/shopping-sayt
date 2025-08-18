@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { signal, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { count } from 'node:console';
 
 
 interface Products {
@@ -8,9 +9,11 @@ interface Products {
   title: string,
   price: number,
   category: string,
+  description: string,
   image: string,
   count?: number,
-  heart: boolean
+  heart: boolean,
+  cheked?:boolean
 }
 
 @Injectable({
@@ -35,8 +38,14 @@ export class BosServiceService {
 
   input = ''
 
-  heartt(item: Products) {
-    this.heart = !this.heart
+  heartt(item: number) {
+    this.product()[item].heart = !this.product()[item].heart
+  }
+
+  totalprice = signal<number>(0)
+
+  umumiynarx(){
+    this.basitem.forEach(item => item.cheked)
   }
 
 
@@ -91,24 +100,24 @@ export class BosServiceService {
       console.log(this.basitem)
     }
     else {
-      this.basitem.push(item)
+      this.basitem.push(
+        {
+          ...item,
+          count: 1
+        }
+
+      )
       console.log(this.basitem)
     }
   }
 
   rembas(id: number, item: Products) {
-    if (this.basitem.some(el => el.id === id)) {
-      this.basitem.forEach((el, index) => {
-        if (el.id === id) {
-          if (el.count && el.count > 1) {
-            el.count -= 1;
-          } else {
-            this.basitem.splice(index, 1);
-          }
-        }
-      });
-      console.log(this.basitem);
-    }
+    this.basitem.forEach((el, index) => {
+      if (el.id === id) {
+        this.basitem.splice(index, 1); // ✅ count tekshirmay, darhol o‘chirish
+      }
+    });
+    console.log(this.basitem);
   }
 
 
@@ -120,6 +129,26 @@ export class BosServiceService {
 
   cleard() {
     this.input = ''
+  }
+
+  plus(num: number) {
+    this.basitem.forEach(el => {
+      if (el.id === num) {
+        if (el.count || el.count === 0) {
+          el.count += 1
+        }
+      }
+    });
+  }
+
+  minus(num: number) {
+    this.basitem.forEach(el => {
+      if (el.id === num) {
+        if (el.count) {
+          el.count--
+        }
+      }
+    })
   }
 
 
