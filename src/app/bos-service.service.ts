@@ -13,7 +13,7 @@ interface Products {
   image: string,
   count?: number,
   heart: boolean,
-  cheked?:boolean
+  cheked?: boolean
 }
 
 @Injectable({
@@ -28,6 +28,8 @@ export class BosServiceService {
   basitem: Products[] = []
 
   product = signal<Products[]>([]);
+
+  total = signal(0);
 
   // fav: boolean = false;
 
@@ -44,7 +46,7 @@ export class BosServiceService {
 
   totalprice = signal<number>(0)
 
-  umumiynarx(){
+  umumiynarx() {
     this.basitem.forEach(item => item.cheked)
   }
 
