@@ -21,12 +21,17 @@
     <div class="div1">
         @for (item of serv.basitem; track $index) {
         <div class="box">
+
+
+
+
             <div class="img">
                 <input type="checkbox">
                 <img [src]="item.image" alt="">
             </div>
 
             <div class="box-main">
+
                 <div class="title">
                     <p>{{item.title}}</p>
                     <div class="del" (click)="serv.rembas(item.id, item)">
@@ -57,10 +62,36 @@
         <div class="border"></div>
 
         }
+
     </div>
     <div class="div2">
-        <!-- <div class="price-box">
+        <div class="price-box">
+            <div class="kur">
+                <i class="bi bi-hand-thumbs-up"></i>
 
-        </div> -->
+                <p>dastafka pullik tanish bilish yo'q</p>
+            </div>
+
+            <div class="das">
+                <p>sizning buyurtmangiz</p>
+
+                <div class="bor">
+                    <div class="narx">
+                        <p>mahsulot({{serv.basitem.length}})</p>
+
+                        <p>2833$</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
 </div>
+<!-- 
+<div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum consequuntur tempore laboriosam possimus,
+        excepturi, facilis corrupti ullam quas earum veniam enim aspernatur accusamus eius eligendi delectus dolorum
+        eveniet natus sequi.</p>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo, natus?</p>
+</div> -->

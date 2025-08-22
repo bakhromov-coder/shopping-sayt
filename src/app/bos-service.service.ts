@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { signal, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { count } from 'node:console';
-
+import { DatePipe } from '@angular/common';
 
 interface Products {
   id: number,
@@ -37,6 +37,7 @@ export class BosServiceService {
 
   heart: boolean = false;
 
+  today = new Date()
 
   input = ''
 

@@ -1,11 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { BosServiceService } from '../bos-service.service';
-import { CurrencyPipe } from '@angular/common';
+import { CurrencyPipe, DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-basket',
   standalone: true,
-  imports: [CurrencyPipe],
+  imports: [CurrencyPipe, DatePipe],
   templateUrl: './basket.component.html',
   styleUrl: './basket.component.css'
 })
