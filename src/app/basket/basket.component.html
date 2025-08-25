@@ -1,19 +1,4 @@
-<!-- @for (item of serv.basitem; track $index) {
-<div class="box">
-
-    <div class="img">
-        <img [src]="item.image" alt="">
-    </div>
-
-    <div class="bottom">
-        <p>{{item.price |currency: 'USD'}}</p>
-        <p>{{item.title}}</p>
-    </div>
-
-
-
-</div>
-} -->
+<!-- 
 <h1>Sizning savatingiz, mahsulotlar soni {{serv.basitem.length}}</h1>
 
 
@@ -77,7 +62,7 @@
 
                 <div class="bor">
                     <div class="narx">
-                        <p>mahsulot({{serv.basitem.length}})</p>
+                        <p>mahsulot:({{serv.basitem.length}})</p>
 
                         <p>2833$</p>
                     </div>
@@ -87,7 +72,7 @@
     </div>
 
 </div>
-<!-- 
+
 <div>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum consequuntur tempore laboriosam possimus,
         excepturi, facilis corrupti ullam quas earum veniam enim aspernatur accusamus eius eligendi delectus dolorum
@@ -95,3 +80,72 @@
 
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo, natus?</p>
 </div> -->
+
+<div class="container">
+    <div class="div1">
+        @for (item of serv.basitem; track $index) {
+        <div class="box">
+            <div class="img">
+                <input type="checkbox" [(ngModel)]="item.cheked">
+                <img [src]="item.image" alt="">
+            </div>
+
+            <div class="box-main">
+                <div class="title">
+                    <p>{{ item.title }}</p>
+                    <div class="del" (click)="serv.rembas(item.id, item)">
+                        <i class="bi bi-trash-fill"></i>
+                        <p>Olib tashlash</p>
+                    </div>
+                </div>
+
+                <div class="price-main">
+                    <div class="count">
+                        <div class="count-num">
+                            <i class="bi bi-dash" (click)="serv.minus(item.id)"></i>
+                            <p class="pnum">{{ item.count }}</p>
+                            <i class="bi bi-plus" (click)="serv.plus(item.id)"></i>
+                        </div>
+                    </div>
+
+                    <div class="price">
+                        <p>{{ item.price | currency:'USD' }}</p>
+                        <p>Jami: {{ (item.price * (item.count || 1)) | currency:'USD' }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        }
+    </div>
+
+    <div class="div2">
+        <div class="price-box">
+            <div class="das">
+                <p>Sizning buyurtmangiz</p>
+
+                <div class="bor">
+                    <div class="narx">
+                        <p>Tanlangan mahsulotlar</p>
+                        <p>{{ serv.umumiynarx().subtotal | currency:'USD' }}</p>
+                    </div>
+
+                    <div class="narx">
+                        <p>Chegirma (10%)</p>
+                        <p>-{{ serv.umumiynarx().discount | currency:'USD' }}</p>
+                    </div>
+
+                    <div class="narx total">
+                        <p><strong>Yakuniy narx</strong></p>
+                        <p><strong>{{ serv.umumiynarx().total | currency:'USD' }}</strong></p>
+                    </div>
+
+                    <div class="yetkazish">
+                        <p>{{ serv.getDeliveryRange()}}</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

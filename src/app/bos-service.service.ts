@@ -37,6 +37,8 @@ export class BosServiceService {
 
   heart: boolean = false;
 
+  yet = new Date()
+
   today = new Date()
 
   input = ''
@@ -47,9 +49,9 @@ export class BosServiceService {
 
   totalprice = signal<number>(0)
 
-  umumiynarx() {
-    this.basitem.forEach(item => item.cheked)
-  }
+  // umumiynarx() {
+  //   this.basitem.forEach(item => item.cheked)
+  // }
 
 
   getdata() {
@@ -152,6 +154,34 @@ export class BosServiceService {
         }
       }
     })
+  }
+
+  umumiynarx() {
+    const subtotal = this.basitem
+      .filter(item => item.cheked)   // ✅ faqat tanlanganlarni oladi
+      .reduce((sum, item) => sum + (item.price * (item.count || 1)), 0);
+
+    const discount = subtotal * 0.1;
+    const total = subtotal - discount;
+
+    return { subtotal, discount, total };
+  }
+
+  getDeliveryRange(): string {
+    const uzMonths = [
+      "yanvar", "fevral", "mart", "aprel", "may", "iyun",
+      "iyul", "avgust", "sentyabr", "oktyabr", "noyabr", "dekabr"
+    ];
+
+    const start = new Date(this.today);
+    start.setDate(start.getDate() + 1);
+
+    const end = new Date(this.today);
+    end.setDate(end.getDate() + 6);
+    const month = uzMonths[end.getMonth()];
+
+    return `Yetkazib berish ${start.getDate()} - ${end.getDate()}-${month}`;
+
   }
 
 

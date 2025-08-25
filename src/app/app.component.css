@@ -1,141 +1,710 @@
-* {
-    padding: 0;
+< !DOCTYPE html><html lang="uz"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Sofuto Market - Onlayn do'kon</title>
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet"><style>* {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-.container {
-    margin: 0 auto;
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+/* HEADER STYLES */
+header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
 }
 
 .nav-main {
+    max-width: 1400px;
+    margin: 0 auto;
     display: flex;
-    justify-content: space-around;
     align-items: center;
-    gap: 2rem;
-    color: #0096FF;
-    /* margin-left: 17%;
-    margin-right: auto; */
-    /* background-color: #D3D3D3; */
+    justify-content: space-between;
+    padding: 15px 20px;
+    gap: 30px;
 }
 
 .logo {
     display: flex;
-    font-family: Georgia, 'Times New Roman', Times, serif;
     align-items: center;
-    color: #0096FF;
-    gap: 1rem;
+    gap: 12px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
 }
 
 .logo img {
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+    transition: all 0.3s ease;
+}
+
+.logo:hover img {
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    transform: rotate(5deg);
+}
+
+.logo h3 {
+    font-size: 22px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .searching {
     display: flex;
-    gap: 1rem;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+    max-width: 600px;
 }
 
 .kat {
     display: flex;
     align-items: center;
-    justify-content: center;
-    background-color: #D3D3D3;
-    padding: 5px 1rem 0 1rem;
-    border-radius: 5px;
+    gap: 8px;
+    padding: 12px 20px;
+    background: linear-gradient(145deg, #667eea, #764ba2);
+    color: white;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+.kat:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(102, 126, 234, 0.4);
+    background: linear-gradient(145deg, #764ba2, #667eea);
+}
+
+.kat i {
+    font-size: 18px;
+}
+
+.kat h5 {
+    font-size: 14px;
+    font-weight: 600;
 }
 
 .serch {
     display: flex;
     align-items: center;
-    /* position:absolute; */
+    flex: 1;
     position: relative;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
 
+.serch:focus-within {
+    border-color: #667eea;
+    box-shadow: 0 12px 40px rgba(102, 126, 234, 0.15);
+    transform: translateY(-2px);
+}
+
+.inp {
+    flex: 1;
+    padding: 15px 20px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background: transparent;
+    border-radius: 15px;
+}
+
+.inp::placeholder {
+    color: #a0aec0;
+    font-weight: 500;
 }
 
 .clear {
-    z-index: 999;
-    right: 25%;
-    position: absolute;
+    padding: 10px;
+    color: #718096;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 8px;
 }
 
+.clear:hover {
+    color: #e53e3e;
+    background: rgba(229, 62, 62, 0.1);
+}
 
+.glas {
+    background: linear-gradient(145deg, #667eea, #764ba2);
+    border: none;
+    padding: 12px 16px;
+    border-radius: 12px;
+    color: white;
+    cursor: pointer;
+    margin: 4px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
 
+.glas:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.glas i {
+    font-size: 16px;
+}
 
 .user {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    gap: 2rem;
-}
-
-.user-item:hover {
-    background-color: #D3D3D3;
+    gap: 25px;
 }
 
 .user-item {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 6px;
-    padding: 1rem;
-    border-radius: 5px;
+    gap: 5px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+.user-item:hover {
+    background: linear-gradient(145deg, #667eea, #764ba2);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
 }
 
 .user-item i {
-    font-size: 1.2rem;
-    line-height: 1;
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.user-item:hover i {
+    transform: scale(1.1);
 }
 
 .user-item h5 {
-    margin: 0;
-    font-size: 1rem;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
 }
 
+.person {
+    background: linear-gradient(145deg, #f0fff4, #c6f6d5);
+    border: 1px solid #9ae6b4;
+    color: #22543d;
+}
 
-.glas {
+.person:hover {
+    background: linear-gradient(145deg, #38a169, #2f855a);
+    color: white;
+}
+
+/* CART STYLES (from previous code) */
+.container:not(.nav-container) {
+    max-width: 1200px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.div1 {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.box {
+    display: flex;
+    gap: 20px;
+    padding: 25px;
+    margin-bottom: 20px;
+    background: linear-gradient(145deg, #f8f9ff, #ffffff);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(102, 126, 234, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
-    left: -10.6%;
-    padding-right: 20px;
-    /* border-color: #0096FF; */
-    border: none;
-    border-left: none;
-    font-size: 20px;
-    border-radius: 5px;
-    border-radius: 0 5px 5px 0;
-
+    overflow: hidden;
 }
 
-/* button {
+.box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.box:hover::before {
+    transform: scaleX(1);
+}
+
+.box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.15);
+}
+
+.img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    min-width: 120px;
+}
+
+.img input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: #667eea;
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.img img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.img img:hover {
+    transform: scale(1.05);
+}
+
+.box-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.title p {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2d3748;
+    line-height: 1.4;
+    flex: 1;
+    margin-right: 15px;
+}
+
+.del {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: linear-gradient(145deg, #fee, #fdd);
+    border: 1px solid #feb2b2;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #e53e3e;
+    font-size: 14px;
+}
+
+.del:hover {
+    background: linear-gradient(145deg, #fed7d7, #feb2b2);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(229, 62, 62, 0.2);
+}
+
+.del i {
+    font-size: 14px;
+}
+
+.price-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.count-num {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: linear-gradient(145deg, #f7fafc, #edf2f7);
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 8px 16px;
+}
+
+.count-num i {
+    width: 30px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
-} */
-
-
-
-.inp {
-    padding-right: 5rem;
-    /* border: 2px solid #0096FF; */
-    border: 1px solid #808080;
-    font-size: 20px;
-    width: 350px;
-    border-radius: 5px;
+    background: linear-gradient(145deg, #667eea, #764ba2);
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
 }
 
-
-/*############################ */
-
-
-
-.showdiv {
-    position: relative;
-    left: 10%;
-    bottom: 100%;
-    z-index: 9999;
-    background-color: lightblue;
-
-
+.count-num i:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
 }
+
+.pnum {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2d3748;
+    min-width: 30px;
+    text-align: center;
+}
+
+.price {
+    text-align: right;
+}
+
+.price p:first-child {
+    font-size: 18px;
+    font-weight: 700;
+    color: #667eea;
+    margin-bottom: 4px;
+}
+
+.price p:last-child {
+    font-size: 14px;
+    color: #718096;
+    font-weight: 500;
+}
+
+.div2 {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    height: fit-content;
+    position: sticky;
+    top: 100px;
+}
+
+.price-box {
+    width: 100%;
+}
+
+.das p:first-child {
+    font-size: 22px;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.bor {
+    background: linear-gradient(145deg, #f8f9ff, #ffffff);
+    border-radius: 16px;
+    padding: 25px;
+    border: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+.narx {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 12px 0;
+}
+
+.narx:not(:last-child) {
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.narx p:first-child {
+    color: #4a5568;
+    font-weight: 500;
+}
+
+.narx p:last-child {
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.total {
+    background: linear-gradient(145deg, #667eea, #764ba2);
+    color: white !important;
+    border-radius: 12px;
+    padding: 18px !important;
+    margin: 20px 0;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+}
+
+.total p {
+    color: white !important;
+    font-size: 16px;
+}
+
+.yetkazish {
+    text-align: center;
+    margin-top: 20px;
+    padding: 15px;
+    background: linear-gradient(145deg, #f0fff4, #c6f6d5);
+    border: 1px solid #9ae6b4;
+    border-radius: 12px;
+}
+
+.yetkazish p {
+    color: #22543d;
+    font-weight: 500;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1200px) {
+    .nav-main {
+        gap: 20px;
+    }
+
+    .searching {
+        max-width: 400px;
+    }
+
+    .user {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 992px) {
+    .nav-main {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .searching {
+        order: 3;
+        flex: 1 1 100%;
+        max-width: none;
+    }
+
+    .user-item h5 {
+        display: none;
+    }
+
+    .user-item {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-main {
+        padding: 10px 15px;
+    }
+
+    .logo h3 {
+        font-size: 18px;
+    }
+
+    .logo img {
+        width: 35px;
+        height: 35px;
+    }
+
+        /* .kat h5 {
+            display: none;
+        }
+
+        .kat {
+            padding: 10px 12px;
+        } */
+
+    .container:not(.nav-container) {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 15px;
+    }
+
+    .box {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .img {
+        align-self: center;
+    }
+
+    .title {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .price-main {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .div1,
+    .div2 {
+        padding: 20px;
+    }
+
+    .div2 {
+        position: relative;
+        top: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-main {
+        padding: 8px 10px;
+    }
+
+    .searching {
+        gap: 10px;
+    }
+
+    .serch {
+        border-radius: 10px;
+    }
+
+    .inp {
+        padding: 12px 15px;
+        font-size: 14px;
+    }
+
+    .user {
+        gap: 10px;
+    }
+
+    .container:not(.nav-container) {
+        padding: 0 10px;
+    }
+
+    Kirish .div1,
+    .div2 {
+        padding: 15px;
+        border-radius: 15px;
+    }
+
+    .box {
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    .title p {
+        font-size: 16px;
+    }
+
+    .count-num {
+        padding: 6px 12px;
+    }
+
+    .count-num i {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+/* ANIMATION KEYFRAMES */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.nav-main {
+    animation: slideInLeft 0.8s ease forwards;
+}
+
+.box {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.box:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.box:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+/* CUSTOM SCROLLBAR */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(145deg, #667eea, #764ba2);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(145deg, #764ba2, #667eea);
+}
+
+</style></head><body><div class="container nav-container"><header><nav class="nav-main"><div class="logo"><img src="https://via.placeholder.com/45" alt="Sofuto Market Logo"><h3>Sofuto market</h3></div><div class="searching"><div class="kat"><i class="bi bi-collection"></i><h5>Katalog</h5></div><div class="serch"><input type="text" placeholder="mahsulotlarni qidirish..." class="inp"><i class="bi bi-x-circle clear"></i><button class="glas"><i class="bi bi-search"></i></button></div></div><div class="user"><div class="user-item person"><i class="bi bi-person"></i><h5>Kirish</h5></div><div class="user-item"><i class="bi bi-heart"></i><h5>Saralangan</h5></div><div class="user-item"><i class="bi bi-bag-check"></i><h5>Savat</h5></div></div></nav></header>< !-- Shopping Cart Section --><div class="container"><div class="div1">< !-- Mahsulot kartasi misoli --><div class="box"><div class="img"><input type="checkbox"><img src="https://via.placeholder.com/100" alt="Mahsulot rasmi"></div><div class="box-main"><div class="title"><p>Mahsulot nomi - Premium telefon</p><div class="del"><i class="bi bi-trash-fill"></i><p>Olib tashlash</p></div></div><div class="price-main"><div class="count"><div class="count-num"><i class="bi bi-dash"></i><p class="pnum">2</p><i class="bi bi-plus"></i></div></div><div class="price"><p>$299.99</p><p>Jami: $599.98</p></div></div></div></div>< !-- Ikkinchi mahsulot misoli --><div class="box"><div class="img"><input type="checkbox" checked><img src="https://via.placeholder.com/100" alt="Mahsulot rasmi"></div><div class="box-main"><div class="title"><p>Noutbuk - Gaming laptop</p><div class="del"><i class="bi bi-trash-fill"></i><p>Olib tashlash</p></div></div><div class="price-main"><div class="count"><div class="count-num"><i class="bi bi-dash"></i><p class="pnum">1</p><i class="bi bi-plus"></i></div></div><div class="price"><p>$899.99</p><p>Jami: $899.99</p></div></div></div></div></div><div class="div2"><div class="price-box"><div class="das"><p>Sizning buyurtmangiz</p><div class="bor"><div class="narx"><p>Tanlangan mahsulotlar</p><p>$1,
+499.97</p></div><div class="narx"><p>Chegirma (10%)</p><p>-$150.00</p></div><div class="narx total"><p><strong>Yakuniy narx</strong></p><p><strong>$1,
+349.97</strong></p></div><div class="yetkazish"><p>📦 Yetkazib berish: 2-3 ish kuni ichida</p></div></div></div></div></div></div></div></body></html>
